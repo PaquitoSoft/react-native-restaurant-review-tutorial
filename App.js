@@ -11,7 +11,8 @@ import {
 	StyleSheet, 
 	Text, 
 	View,
-	TextInput
+	TextInput,
+	ScrollView
 } from 'react-native';
 
 import Header from 'components/Header';
@@ -19,7 +20,34 @@ import Header from 'components/Header';
 const restaurants = [
 	{ name: 'React Cafe', address: '123 Anywhere St' },
 	{ name: 'Fancy Restaurant', address: '799 Main St' },
-	{ name: 'Taco Bar', address: '324 Nearby St' }
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
+	{ name: 'React Cafe', address: '123 Anywhere St' },
+	{ name: 'Fancy Restaurant', address: '799 Main St' },
+	{ name: 'Taco Bar', address: '324 Nearby St' },
 ];
 
 const Restaurant = ({ restaurant, index }) => (
@@ -58,16 +86,18 @@ export default class App extends Component<Props> {
 					value={this.state.filter}
 				/>
 
-				{ restaurants
-					.filter(restaurant => {
-						const { filter } = this.state;
-						const re = new RegExp(filter, 'i');
-						return !filter || re.test(`${restaurant.name}-${restaurant.address}`);
-					})
-					.map((restaurant, index) => (
-						<Restaurant restaurant={restaurant} index={index} key={restaurant.name} />
-					))
-				}
+				<ScrollView contentContainerStyle={{ paddingTop: 30 }}>
+					{ restaurants
+						.filter(restaurant => {
+							const { filter } = this.state;
+							const re = new RegExp(filter, 'i');
+							return !filter || re.test(`${restaurant.name}-${restaurant.address}`);
+						})
+						.map((restaurant, index) => (
+							<Restaurant restaurant={restaurant} index={index} key={restaurant.name} />
+						))
+					}
+				</ScrollView>
 			</View>
 		);
 	}
@@ -90,7 +120,6 @@ const styles = StyleSheet.create({
 		color: 'grey'
 	},
 	input: {
-		marginBottom: 30,
 		padding: 10,
 		paddingHorizontal: 20,
 		fontSize: 16,

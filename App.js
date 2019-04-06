@@ -14,7 +14,7 @@ import {
 	TextInput
 } from 'react-native';
 
-import HeaderStyles from './components/HeaderStyles';
+import Header from 'components/Header';
 
 const restaurants = [
 	{ name: 'React Cafe', address: '123 Anywhere St' },
@@ -47,9 +47,7 @@ export default class App extends Component<Props> {
 			<View style={{
 				flex: 1
 			}}>
-				<Text	style={HeaderStyles.styles}>
-					Restaurant Reviewer
-				</Text>
+				<Header />
 
 				<TextInput 
 					style={styles.input} 

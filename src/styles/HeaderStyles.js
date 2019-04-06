@@ -7,5 +7,13 @@ export default StyleSheet.create({
 		textAlign: 'center',
 		color: '#0066CC',
 		fontWeight: '300'
+	},
+	iosStyles: {
+		padding: 20,
+		paddingTop: 40,
+		fontSize: 26,
+		textAlign: 'center',
+		color: '#0066CC',
+		fontWeight: '200'
 	}
 });
